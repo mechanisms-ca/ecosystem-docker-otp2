@@ -10,12 +10,14 @@ IMAGE='mechanisms/otp2'
 if [ -z "$VERSION" ]; then
   echo "building $IMAGE_NAME:$SHORT_HASH"
   docker build -t $IMAGE_NAME:$SHORT_HASH .
+  echo "pushing $IMAGE_NAME:$SHORT_HASH"
+  docker image push $IMAGE_NAME:$SHORT_HASH
 else
   echo "version is '$VERSION'";
   docker build -t $IMAGE_NAME:$SHORT_HASH -t $IMAGE_NAME:$VERSION -t $IMAGE_NAME:latest .
+  echo "pushing $IMAGE_NAME:$SHORT_HASH, $IMAGE_NAME:$VERSION, $IMAGE_NAME:latest"
+  docker image push --all-tags $IMAGE_NAME
 fi
 
-echo "pushing $IMAGE_NAME"
-docker push $IMAGE_NAME
 
 
