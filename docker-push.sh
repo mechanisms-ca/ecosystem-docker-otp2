@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
 IMAGE_NAME='mechanisms/otp2'
-
 SHORT_HASH=$(git rev-parse --short HEAD)
 VERSION=${1}
-IMAGE='mechanisms/otp2'
 
 
 if [ -z "$VERSION" ]; then
