@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   otp:
-    image: otp
+    image: mechanisms/otp2:latest
     restart: unless-stopped
     ports:
       - 8080:8080
