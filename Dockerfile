@@ -1,6 +1,7 @@
 FROM openjdk:11-jre-slim
 LABEL maintainer="Nathan Schepers <nathan.schepers@protonmail.com>"
 
+# change the version here and push with the appropriate tag
 ENV OTP_VERSION=2.1.0
 ENV JAVA_OPTIONS=-Xmx1G
 
